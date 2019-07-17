@@ -1,5 +1,6 @@
 #!/bin/bash
-
+printf 'Project name: '
+read NAME
 printf 'Language (node, go): '
 read LANG
 
@@ -18,9 +19,9 @@ case $LANG in
     ;;
 esac
 
-mkdir $1
-printf "Created folder %s \n" $1
-cd $1
+mkdir $NAME
+printf "Created folder %s \n" $NAME
+cd $NAME
 git init
 git remote add origin https://github.com/DennisOnder/$1
 touch README.md
