@@ -23,7 +23,7 @@ mkdir $NAME
 printf "Created folder %s \n" $NAME
 cd $NAME
 git init
-git remote add origin https://github.com/DennisOnder/$1
+git remote add origin https://github.com/denis-onder/$NAME
 touch README.md
 touch .gitignore
 code .
