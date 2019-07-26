@@ -1,17 +1,19 @@
 #!/bin/bash
+printf 'Git/GitHub Username: '
+read USERNAME
 printf 'Project name: '
 read NAME
-printf 'Language (node, go): '
+printf 'Language (javascript or go): '
 read LANG
 
 case $LANG in
-  node)
-    echo "Creating a new Node project..."
-    cd ~/Code
+  javascript)
+    echo "Creating a new JavaScript project..."
+    cd /Code
     ;;
   go)
     echo "Creating a new Golang project..."
-    cd ~/go/src/github.com/DennisOnder
+    cd ~/go/src/github.com/$USERNAME
     ;;
   *)
     echo "Please provide a language from the list of supported options."
@@ -23,7 +25,7 @@ mkdir $NAME
 printf "Created folder %s \n" $NAME
 cd $NAME
 git init
-git remote add origin https://github.com/denis-onder/$NAME
+git remote add origin https://github.com/$USERNAME/$NAME
 touch README.md
 touch .gitignore
 code .
